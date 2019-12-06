@@ -1,5 +1,8 @@
 trigger:
-- master
+  branches:
+    include: ['*']
+  tags:
+    include: ['*']
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -18,5 +21,5 @@ steps:
 - bash: |
     echo ">>> Publish"
     npm run deploy -p $(VSCODE_MARKETPLACE_TOKEN)
-  displayName: Publish
+  displayName: 'Publish'
   condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Agent.OS'], 'Linux'))
