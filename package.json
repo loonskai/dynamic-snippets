@@ -35,7 +35,8 @@
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile",
-		"test": "node ./out/test/runTest.js"
+		"test": "node ./out/test/runTest.js",
+		"deploy": "vsce publish"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
@@ -50,6 +51,7 @@
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
+		"vsce": "^1.70.0",
 		"vscode-test": "^1.2.0"
 	},
 	"eslintConfig": {
