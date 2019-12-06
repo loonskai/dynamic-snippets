@@ -1,8 +1,3 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
 - master
 
@@ -18,4 +13,10 @@ steps:
 - script: |
     npm install
     npm run build
-  displayName: 'npm install and build'
+  displayName: 'Build'
+
+- bash: |
+    echo ">>> Publish"
+    npm run deploy -p $(VSCODE_MARKETPLACE_TOKEN)
+  displayName: Publish
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Agent.OS'], 'Linux'))
