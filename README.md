@@ -1,5 +1,7 @@
 # Dynamic Snippets
 
+[![Build Status](https://dev.azure.com/loonskai/dynamic-snippets/_apis/build/status/loonskai.dynamic-snippets?branchName=master)](https://dev.azure.com/loonskai/dynamic-snippets/_build/latest?definitionId=2&branchName=master)
+
 Use simple and fancy shorthands to write your JavaScript code in VSCode faster
 
 ## Supported languages
