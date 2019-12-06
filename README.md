@@ -8,9 +8,10 @@ Use simple and fancy shorthands to write your JavaScript code in VSCode faster
 
 ## Abbreviations
 Use `Tab` keyboard to extend a shorthand into a JS code line
+
 |Shorthand|Result|
 |---|---|
-|`i>name`|`import name from 'name';`|ES6 import|
+|`i>name`|`import name from 'name';`|
 |`i>defaultExport>name`|`import defaultExport from 'name';`|
 |`i:a,b>name`|`import { a, b } from 'name';`|
 |`i*alias>name`|`import * as alias from 'name';`|
