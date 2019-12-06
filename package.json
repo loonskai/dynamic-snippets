@@ -3,6 +3,7 @@
 	"displayName": "dynamic-snippets",
 	"description": "VSCode dynamic JavaScript snippets",
 	"version": "0.0.1",
+	"publisher": "loonskai",
 	"engines": {
 		"vscode": "^1.40.0"
 	},
@@ -10,14 +11,22 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onLanguage:javascript",
+		"onLanguage:typescript"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.expandAbbreviation",
+				"title": "expand Abbreviation"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.expandAbbreviation",
+				"key": "tab",
+				"when": "editorTextFocus && !inSnippetMode"
 			}
 		]
 	},
@@ -49,8 +58,10 @@
 			"plugin:@typescript-eslint/recommended"
 		],
 		"env": {
-			"node": 1,
-			"browser": 1
+			"node": true,
+			"browser": true,
+			"es6": true,
+			"mocha": true
 		},
 		"parser": "@typescript-eslint/parser",
 		"plugins": [
@@ -60,5 +71,8 @@
 		"rules": {
 			"no-console": "warn"
 		}
+	},
+	"dependencies": {
+		"dynamic-snippets-generator": "^1.0.0"
 	}
 }

@@ -1,16 +1,37 @@
-import * as vscode from 'vscode';
+import {
+  window,
+  commands,
+  ExtensionContext,
+  Position,
+  Range,
+  SnippetString
+} from "vscode";
+import generateSnippet from "dynamic-snippets-generator";
 
-export function activate(context: vscode.ExtensionContext): void {
+export function activate(context: ExtensionContext): void {
+  const commandsToRegister = {
+    "extension.expandAbbreviation": (): void => {
+      const { activeTextEditor } = window;
+      if (activeTextEditor) {
+        const { line, character } = activeTextEditor.selection.active;
+        const { text } = activeTextEditor.document.lineAt(line);
+        const snippet = new SnippetString(generateSnippet(text) as string);
 
-	console.log('Congratulations, your extension "dynamic-snippets" is now active!');
+        activeTextEditor.edit(() => {
+          const startPosition = new Position(line, 0);
+          const endPosition = new Position(line, character);
+          const range = new Range(startPosition, endPosition);
+          activeTextEditor.insertSnippet(snippet, range);
+        });
+      }
+    }
+  };
 
-	const disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello VSCode!');
-	});
-
-	context.subscriptions.push(disposable)
+  Object.entries(commandsToRegister).forEach(([name, method]) =>
+    context.subscriptions.push(commands.registerCommand(name, method))
+  );
 }
 
 export function deactivate(): void {
-	console.log('deactivate')
+  console.log("deactivate");
 }
