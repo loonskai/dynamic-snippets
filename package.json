@@ -1,19 +1,29 @@
 {
 	"name": "dynamic-snippets",
-	"displayName": "dynamic-snippets",
+	"displayName": "Dynamic Snippets",
 	"description": "VSCode dynamic JavaScript snippets",
 	"version": "0.1.1",
 	"publisher": "loonskai",
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/loonskai/dynamic-snippets"
+	},
+	"license": "MIT",
+	"keywords": [
+		"javascript",
+		"js",
+		"typescript",
+		"ts",
+		"snippets"
+	],
 	"engines": {
 		"vscode": "^1.40.0"
 	},
 	"categories": [
-		"Other"
+		"Snippets"
 	],
-	"activationEvents": [
-		"onLanguage:javascript",
-		"onLanguage:typescript"
-	],
+	"activationEvents": ["*"],
+	"icon": "icon.png",
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
@@ -31,12 +41,15 @@
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile",
+		"package": "vsce package",
+		"publish": "vsce publish",
+		"pretest": "npm run test-compile && npm install",
 		"test": "node ./out/test/runTest.js",
-		"publish": "vsce publish patch"
+		"test-compile": "node ./scripts/clean.js && npm run compile",
+		"version": "node ./scripts/version.js && git add CHANGELOG.md",
+		"vscode:prepublish": "npm run compile",
+		"watch": "tsc -watch -p ./"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",

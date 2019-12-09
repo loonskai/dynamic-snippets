@@ -1,0 +1,12 @@
+steps:
+  - task: GitHubRelease@1
+    inputs:
+      gitHubConnection:
+        repositoryName: "$(Build.Repository.Name)"
+        action: "create"
+        target: "$(Build.SourceVersion)"
+        tagSource: "gitTag"
+        tagPattern: "v*"
+        releaseNotesFilePath: "CHANGELOG.md"
+        changeLogCompareToRelease: "lastFullRelease"
+        changeLogType: "commitBased"
