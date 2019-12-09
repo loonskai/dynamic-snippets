@@ -20,5 +20,5 @@ steps:
 
 - bash: |
     npm run publish -p $(VSCODE_MARKETPLACE_TOKEN)
-    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
     displayName: 'Publish'
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))

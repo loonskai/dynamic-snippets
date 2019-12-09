@@ -2,7 +2,7 @@
 	"name": "dynamic-snippets",
 	"displayName": "dynamic-snippets",
 	"description": "VSCode dynamic JavaScript snippets",
-	"version": "0.0.2",
+	"version": "0.0.1",
 	"publisher": "loonskai",
 	"engines": {
 		"vscode": "^1.40.0"
@@ -36,7 +36,7 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run build",
 		"test": "node ./out/test/runTest.js",
-		"publish": "vsce publish minor"
+		"publish": "vsce publish patch"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
