@@ -2,7 +2,7 @@
 	"name": "dynamic-snippets",
 	"displayName": "dynamic-snippets",
 	"description": "VSCode dynamic JavaScript snippets",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "loonskai",
 	"engines": {
 		"vscode": "^1.40.0"
