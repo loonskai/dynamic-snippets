@@ -1,0 +1,29 @@
+variables:
+  azure_pipelines: true
+
+trigger:
+  - "*"
+pr:
+  - "*"
+
+jobs:
+  - job: Windows
+    pool:
+      vmImage: windows-latest
+    steps:
+      - template: common/build.yml
+      - template: common/test.yml
+
+  - job: Linux
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - template: common/build.yml
+      - template: common/test.yml
+
+  - job: macOS
+    pool:
+      vmImage: macos-latest
+    steps:
+      - template: common/build.yml
+      - template: common/test.yml
