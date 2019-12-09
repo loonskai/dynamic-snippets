@@ -36,7 +36,7 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run build",
 		"test": "node ./out/test/runTest.js",
-		"deploy": "vsce publish"
+		"publish": "vsce publish minor"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
