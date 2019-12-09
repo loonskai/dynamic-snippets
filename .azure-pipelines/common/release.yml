@@ -1,7 +1,7 @@
 steps:
   - task: GitHubRelease@1
     inputs:
-        gitHubConnection:
+        gitHubConnection: loonskai
         repositoryName: "$(Build.Repository.Name)"
         action: "create"
         target: "$(Build.SourceVersion)"
