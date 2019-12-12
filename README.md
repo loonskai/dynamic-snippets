@@ -1,5 +1,5 @@
 # Dynamic Snippets
-> :warning: **Extension is the development stage**. However you may try using in now. Any feedback and ideas will be appretiated :grimacing:
+> :warning: **Extension is in the development stage**. However you may try using in now. Any feedback and ideas will be appretiated :grimacing:
 <p align="center">
   <a href="https://dev.azure.com/loonskai/dynamic-snippets/_build/latest?definitionId=2&branchName=master">
     <img alt="Azure Pipelines Build Status" src="https://dev.azure.com/loonskai/dynamic-snippets/_apis/build/status/loonskai.dynamic-snippets?branchName=master"></a>
