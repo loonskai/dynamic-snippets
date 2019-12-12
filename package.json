@@ -5,8 +5,8 @@
 	"version": "0.1.1",
 	"publisher": "loonskai",
 	"repository": {
-    "type": "git",
-    "url": "https://github.com/loonskai/dynamic-snippets"
+		"type": "git",
+		"url": "https://github.com/loonskai/dynamic-snippets"
 	},
 	"license": "MIT",
 	"keywords": [
@@ -22,7 +22,9 @@
 	"categories": [
 		"Snippets"
 	],
-	"activationEvents": ["*"],
+	"activationEvents": [
+		"*"
+	],
 	"icon": "icon.png",
 	"main": "./out/extension.js",
 	"contributes": {
