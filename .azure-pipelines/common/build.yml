@@ -10,5 +10,5 @@ steps:
     displayName: Start xvfb
     condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
   
-  - script: "npm install"
+  - script: "yarn"
     displayName: "Install dependencies"
