@@ -5,6 +5,8 @@
     <img alt="Azure Pipelines Build Status" src="https://dev.azure.com/loonskai/dynamic-snippets/_apis/build/status/loonskai.dynamic-snippets?branchName=master"></a>
     <a href="https://marketplace.visualstudio.com/items?itemName=loonskai.dynamic-snippets">
     <img alt="VS Code Marketplace Downloads" src="https://img.shields.io/visual-studio-marketplace/d/loonskai.dynamic-snippets"></a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=loonskai.dynamic-snippets">
+    <img alt="VS Code Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/loonskai.dynamic-snippets"></a>
 </p>
 
 Use simple and fancy shorthands to write your JavaScript code in VSCode faster
