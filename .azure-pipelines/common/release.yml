@@ -2,8 +2,8 @@ steps:
   - bash: |
       echo ">>> Publish"
       yarn publish -p $(VSCODE_MARKETPLACE_TOKEN)
-      displayName: Publish
-      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/master'))
+    displayName: Publish
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/master'))
 
   - task: GitHubRelease@1
     inputs:
