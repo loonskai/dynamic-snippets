@@ -1,7 +1,7 @@
 steps:
   - bash: |
       echo ">>> Publish"
-      npm run publish -p $(VSCODE_MARKETPLACE_TOKEN)
+      yarn publish -p $(VSCODE_MARKETPLACE_TOKEN)
       displayName: Publish
       condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/master'))
 

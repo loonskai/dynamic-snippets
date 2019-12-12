@@ -45,7 +45,7 @@
 	"scripts": {
 		"compile": "tsc -p ./",
 		"package": "vsce package",
-		"publish": "vsce publish",
+		"publish": "vsce publish --yarn",
 		"pretest": "npm run test-compile && npm install",
 		"test": "node ./out/test/runTest.js",
 		"test-compile": "node ./scripts/clean.js && npm run compile",
