@@ -15,14 +15,17 @@ export function activate(context: ExtensionContext): void {
       if (activeTextEditor) {
         const { line, character } = activeTextEditor.selection.active;
         const { text } = activeTextEditor.document.lineAt(line);
-        const snippet = new SnippetString(generateSnippet(text) as string);
-
-        activeTextEditor.edit(() => {
-          const startPosition = new Position(line, 0);
-          const endPosition = new Position(line, character);
-          const range = new Range(startPosition, endPosition);
-          activeTextEditor.insertSnippet(snippet, range);
-        });
+        const snippetString: string = generateSnippet(text);
+        
+        if (snippetString !== text) {
+          const snippet = new SnippetString(snippetString);
+          activeTextEditor.edit(() => {
+            const startPosition = new Position(line, 0);
+            const endPosition = new Position(line, character);
+            const range = new Range(startPosition, endPosition);
+            activeTextEditor.insertSnippet(snippet, range);
+          });
+        }
       }
     }
   };
