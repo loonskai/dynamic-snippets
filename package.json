@@ -90,6 +90,6 @@
 		}
 	},
 	"dependencies": {
-		"dynamic-snippets-generator": "^1.0.0"
+		"dynamic-snippets-generator": "^1.1.0"
 	}
 }
